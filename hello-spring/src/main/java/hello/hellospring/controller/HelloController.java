@@ -13,7 +13,7 @@ public class HelloController {
     public String hello(Model model){
         model.addAttribute("data", "저기요!!!!");
         model.addAttribute("data", "압압압");asdfadsfafsfdsfsfds
-                바꿀게바꿀게바꿀기
+                바꿀게바꿀게바꿀기ㄴㄴㄴㄴㄴㄴ
         return "hello";
     }
 
