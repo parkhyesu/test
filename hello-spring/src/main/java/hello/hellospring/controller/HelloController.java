@@ -14,6 +14,7 @@ public class HelloController {
         model.addAttribute("data", "저기요!!!!");
         model.addAttribute("data", "압압압");
         model.addAttribute("www", "fff");
+        console.log("mastr 계정에서 하는중")
         return "hello";
     }
 
