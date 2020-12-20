@@ -1,0 +1,145 @@
+Index: hello-spring/src/main/java/hello/hellospring/controller/HelloController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package hello.hellospring.controller;\r\n\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.RequestParam;\r\nimport org.springframework.web.bind.annotation.ResponseBody;\r\n\r\n@Controller\r\npublic class HelloController {\r\n\r\n    @GetMapping(\"hello\")\r\n    public String hello(Model model){\r\n        model.addAttribute(\"data\", \"저기요!!!!\");\r\n        model.addAttribute(\"data\", \"압압압\");asdfadsfafsfdsfsfds\r\n\r\n        return \"hello\";\r\n    }\r\n\r\n    @GetMapping(\"hello-mvc\")\r\n    public String helloMvc(@RequestParam(\"name\") String name, Model model){\r\n        model.addAttribute(\"name\", name);\r\n        return \"hello-template\";\r\n    }\r\n\r\n    @GetMapping(\"hello-string\")\r\n    @ResponseBody\r\n    public String helloString(@RequestParam(\"name\") String name){\r\n        return \"hello\" + name;\r\n    }\r\n\r\n    //이게 중요\r\n    @GetMapping(\"hello-api\")\r\n    @ResponseBody\r\n    public Hello helloApi(@RequestParam(\"name\") String name){\r\n        Hello hello = new Hello();\r\n        hello.setName(name);\r\n        //문자가 아닌 객체를 return\r\n        return hello;\r\n        //?name=얍 url 에 입력시에 {\"name\" : \"얍\"} 출력됨.\r\n    }\r\n\r\n    static class Hello{\r\n        private String name;\r\n\r\n        public String getName() {\r\n            return name;\r\n        }\r\n\r\n        public void setName(String name) {\r\n            this.name = name;\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- hello-spring/src/main/java/hello/hellospring/controller/HelloController.java	(revision 7f28de50a2de310e341e458a35453de90011b549)
++++ hello-spring/src/main/java/hello/hellospring/controller/HelloController.java	(date 1606826806452)
+@@ -13,7 +13,7 @@
+     public String hello(Model model){
+         model.addAttribute("data", "저기요!!!!");
+         model.addAttribute("data", "압압압");asdfadsfafsfdsfsfds
+-
++        바꿀게 바꿀게 바꿀게!!!!!!!!!
+         return "hello";
+     }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"53bf3c73-24cf-4bd1-9755-c81e8eb5b872\" name=\"Default Changelist\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"C:\\IntelliJ IDEA Community Edition 2020.2\\plugins\\maven\\lib\\maven3\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1frCohkFROqo2aFshZZlvTFpSoM\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/hello-spring/build.gradle\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"53bf3c73-24cf-4bd1-9755-c81e8eb5b872\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1596967000660</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1596967000660</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"840\" y=\"317\" key=\"FileChooserDialogImpl\" timestamp=\"1596967090442\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"840\" y=\"317\" key=\"FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1596967090442\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 7f28de50a2de310e341e458a35453de90011b549)
++++ .idea/workspace.xml	(date 1606826834928)
+@@ -1,12 +1,61 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </select>
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="53bf3c73-24cf-4bd1-9755-c81e8eb5b872" name="Default Changelist" comment="" />
++    <list default="true" id="53bf3c73-24cf-4bd1-9755-c81e8eb5b872" name="Default Changelist" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hello-spring/src/main/java/hello/hellospring/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-spring/src/main/java/hello/hellospring/controller/HelloController.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="Git.Settings">
++    <excluded-from-favorite>
++      <branch-storage>
++        <map>
++          <entry type="REMOTE">
++            <value>
++              <list>
++                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
++              </list>
++            </value>
++          </entry>
++        </map>
++      </branch-storage>
++    </excluded-from-favorite>
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+@@ -21,7 +70,7 @@
+   </component>
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hello-spring/build.gradle" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -33,11 +82,42 @@
+       <updated>1596967000660</updated>
+     </task>
+     <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/master" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="WindowStateProjectService">
+-    <state x="840" y="317" key="FileChooserDialogImpl" timestamp="1596967090442">
++    <state x="551" y="266" key="Vcs.Push.Dialog.v2" timestamp="1606826444127">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state x="840" y="317" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1596967090442" />
++    <state x="551" y="266" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606826444127" />
++    <state x="774" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606826545555">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="774" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606826545555" />
++    <state x="731" y="245" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606826834146">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="731" y="245" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606826834146" />
+   </component>
+ </project>
+\ No newline at end of file
